@@ -1,0 +1,23 @@
+@use './base/reset';
+@use './base/fonts';
+@use './base/variables';
+@use './utils/functions' as *;
+@use './utils/mixins' as *;
+@use './base/base';
+@use './base/slider';
+
+@use './blocks/header';
+@use './blocks/hero';
+@use './blocks/about';
+@use './blocks/statistics';
+@use './blocks/audience';
+@use './blocks/results';
+@use './blocks/analyze';
+@use './blocks/main-service';
+@use './blocks/services';
+@use './blocks/reviews';
+@use './blocks/process';
+@use './blocks/team';
+@use './blocks/faq';
+@use './blocks/discussion';
+@use './blocks/footer';

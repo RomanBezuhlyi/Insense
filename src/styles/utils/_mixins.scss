@@ -1,0 +1,50 @@
+@use 'sass:map';
+
+$breakpoints: (
+	mobile: 767px,
+	tablet: 991px,
+);
+
+@mixin respond($breakpoint) {
+	@media (max-width: map.get($breakpoints, $breakpoint)) {
+		@content;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin fluid-gap($max, $min, $min-vw: 320px, $max-vw: 1200px) {
+	gap: clamp(
+		#{$min},
+		calc(
+			#{$min} + (#{$max} - #{$min}) * ((100vw - #{$min-vw}) /
+						(#{$max-vw} - #{$min-vw}))
+		),
+		#{$max}
+	);
+}

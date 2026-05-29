@@ -1,0 +1,26 @@
+:root {
+	/* Colors */
+	--color-accent: #0068ff;
+	--color-title: #000000;
+	--color-text: #605f5f;
+	--color-bg: #ffffff;
+	--color-bg-accent: #f4f3f8;
+
+	/* Typography */
+	--font-main: 'Inter Tight', sans-serif;
+	--font-title: 'e-Ukraine', sans-serif;
+	--font-button: 'Golos Text', sans-serif;
+	--font-number: 'Space Grotesk', sans-serif;
+	--font-size-base: 18px;
+
+	/* Spacing */
+	--container-width: 1370px;
+	--container-padding: 15px;
+
+	/* Transition */
+	--transition-default: 0.3s ease;
+
+	/* Viewport sizes */
+	--mobile: 767px;
+	--tablet: 990px;
+}

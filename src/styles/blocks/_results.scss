@@ -1,0 +1,340 @@
+@use '../utils' as *;
+
+.results {
+	background: var(--color-bg-accent);
+	padding-bottom: 96px;
+	@include respond(tablet) {
+		padding-bottom: 48px;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 32px;
+		@include respond(tablet) {
+			margin-bottom: 16px;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			gap: 32px;
+		}
+	}
+
+	&__title {
+		max-width: 670px;
+	}
+
+	&__panel-label {
+		color: var(--color-text);
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 84%;
+		margin-bottom: 12px;
+	}
+
+	&__tabs {
+		display: flex;
+		padding: 4px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		background: var(--color-bg);
+	}
+
+	&__tab {
+		display: flex;
+		padding: 12px;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		color: var(--color-text);
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 130%;
+		letter-spacing: 0.32px;
+		border-radius: 8px;
+		transition: var(--transition-default);
+		@include hover {
+			color: var(--color-title);
+		}
+		&.active {
+			color: var(--color-bg);
+			background: var(--color-accent);
+		}
+	}
+
+	&__card {
+		display: flex;
+		align-items: center;
+		border-radius: 20px;
+		overflow: hidden;
+		background: var(--color-bg);
+		@include respond(tablet) {
+			border-radius: 16px;
+			flex-direction: column-reverse;
+			height: 622px;
+		}
+	}
+
+	&__card-content {
+		padding: 24px 20px 24px 24px;
+		@include respond(tablet) {
+			padding: 16px;
+		}
+	}
+
+	&__card-date {
+		color: var(--color-text);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 130%; /* 20.8px */
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			display: none;
+		}
+	}
+
+	&__card-title {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		color: var(--color-title);
+		font-family: var(--font-title);
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 110%;
+		margin-bottom: 24px;
+		transition: var(--transition-default);
+		@include hover {
+			color: var(--color-accent);
+		}
+		i {
+			color: var(--color-accent);
+			font-size: 24px;
+		}
+		@include respond(tablet) {
+			font-size: 16px;
+			gap: 8px;
+			margin-bottom: 12px;
+		}
+	}
+
+	&__card-text {
+		color: var(--color-title);
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 130%;
+		margin-bottom: 48px;
+		@include respond(tablet) {
+			font-size: 16px;
+			margin-bottom: 32px;
+		}
+	}
+
+	&__card-info {
+		margin-bottom: 48px;
+		@include respond(tablet) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__card-label {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		color: var(--color-title);
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 130%;
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			font-size: 16px;
+		}
+		i {
+			font-size: 16px;
+		}
+	}
+
+	&__card-list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include respond(tablet) {
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			gap: 32px;
+			row-gap: 24px;
+		}
+	}
+
+	&__card-item {
+		padding-left: 12px;
+		border-left: 2px solid var(--color-accent);
+		span {
+			display: block;
+			color: var(--color-title);
+			font-family: var(--font-title);
+			font-size: 40px;
+			font-weight: 400;
+			line-height: 110%;
+			letter-spacing: -0.4px;
+			margin-bottom: 16px;
+			@include respond(tablet) {
+				font-size: 16px;
+			}
+		}
+		p {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 130%;
+			@include respond(tablet) {
+				font-size: 12px;
+			}
+		}
+	}
+
+	&__card-link {
+		width: 198px;
+		display: flex;
+		padding: 18px 20px;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		color: var(--color-title);
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 100%;
+		border-bottom: 1px solid var(--color-title);
+		transition: var(--transition-default);
+		@include hover {
+			color: var(--color-accent);
+			border-color: var(--color-accent);
+		}
+		@include respond(tablet) {
+			width: 178px;
+			font-size: 14px;
+			margin: auto;
+		}
+	}
+
+	&__card-img {
+		width: 547px;
+		min-height: 450px;
+		object-fit: cover;
+		flex-shrink: 0;
+		border-radius: 20px 0 0 20px;
+		@include respond(tablet) {
+			width: 100%;
+			min-height: 240px;
+			border-radius: 12px;
+		}
+	}
+
+	&__control {
+		margin-top: 32px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 32px;
+		@include respond(tablet) {
+			margin-top: 16px;
+			flex-direction: column;
+			gap: 16px;
+			align-items: flex-end;
+		}
+	}
+
+	&__scrollbar {
+		width: 100%;
+		height: 4px;
+		border-radius: 2px;
+		background: #cdcdcd;
+		@include respond(tablet) {
+			height: 2px;
+		}
+		.swiper-scrollbar-drag {
+			height: 4px;
+			border-radius: 2px;
+			background: #07f;
+			@include respond(tablet) {
+				height: 2px;
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		@include respond(tablet) {
+			gap: 8px;
+			width: 100%;
+		}
+	}
+
+	&__btn-prev {
+		display: flex;
+		width: 48px;
+		height: 48px;
+		padding: 12px;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1/1;
+		stroke: var(--color-title);
+		border-radius: 12px;
+		background: var(--color-bg);
+		transition: var(--transition-default);
+		svg {
+			transition: var(--transition-default);
+		}
+	}
+
+	&__pagination {
+		width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: var(--color-title);
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 130%;
+	}
+
+	&__pagination.desktop {
+		display: flex;
+		@include respond(tablet) {
+			display: none;
+		}
+	}
+
+	&__pagination.mobile {
+		display: none;
+		@include respond(tablet) {
+			display: flex;
+			margin-right: auto;
+		}
+	}
+
+	&__btn-next {
+		display: flex;
+		width: 48px;
+		height: 48px;
+		padding: 12px;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1/1;
+		stroke: var(--color-title);
+		border-radius: 12px;
+		background: var(--color-bg);
+		transition: var(--transition-default);
+		svg {
+			transition: var(--transition-default);
+		}
+	}
+}
+
+.swiper-button-disabled {
+	background: transparent;
+}

@@ -1,0 +1,40 @@
+import '@/styles/main.scss'
+
+import { initSliders } from '@/js/modules/slider'
+import { initPhoneMask } from '@/js/modules/phoneMask'
+import { initAccordion } from '@/js/modules/accordion'
+import { initMobileMenu } from '@/js/modules/mobileMenu'
+import { initHeaderDropdown } from '@/js/modules/dropdown'
+import { initTabs } from '@/js/modules/tabs'
+import { initHeroWords } from '@/js/modules/heroWords.js'
+import { initServicesAccordion } from '@/js/modules/servicesAccordion.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+	initMobileMenu({
+		burgerSelector: '.header__burger',
+		menuSelector: '.header__nav',
+		activeClass: 'is-open',
+		lockClass: 'lock',
+	})
+	const { resultsSlider } = initSliders()
+	initTabs({
+		tabsSelector: '.results__tab',
+		slideSelector: '.results__item',
+		swiper: resultsSlider,
+	})
+	initHeroWords()
+	// initPhoneMask('.number-mask')
+	// initAccordion({
+	// 	rootSelector: '.faq',
+	// 	itemSelector: '.faq__item',
+	// 	triggerSelector: '.faq__toggle',
+	// 	contentSelector: '.faq__body',
+	// 	activeClass: 'is-open',
+	// })
+	initHeaderDropdown({
+		itemSelector: '.header__lang',
+		triggerSelector: '.header__lang-current',
+		activeClass: 'is-open',
+	})
+	initServicesAccordion()
+})
