@@ -1,1 +1,364 @@
 @use '../utils' as *;
+
+.reviews {
+	padding: 96px 0;
+	border-radius: 28px;
+	background: var(--color-bg-accent);
+	@include respond(tablet) {
+		padding: 48px 0;
+		border-radius: 16px;
+	}
+
+	&__top {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 32px;
+		@include respond(tablet) {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			gap: 24px;
+			margin-bottom: 24px;
+		}
+	}
+
+	&__title {
+		max-width: 567px;
+	}
+
+	&__avatars-img {
+		margin-bottom: 8px;
+	}
+
+	&__avatars-label {
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 130%;
+		@include respond(tablet) {
+			font-size: 12px;
+		}
+	}
+
+	&__slider {
+		@media (max-width: 1200px) {
+			padding: 0 15px !important;
+		}
+	}
+
+	&__card {
+		padding: 16px;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		border-radius: 24px;
+		background: var(--color-bg);
+		@include respond(mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 8px;
+			border-radius: 12px;
+		}
+	}
+
+	&__card-video {
+		position: relative;
+		flex-shrink: 0;
+		width: 286px;
+		height: 340px;
+		overflow: hidden;
+		border-radius: 16px;
+		background: #000;
+		cursor: pointer;
+		@include respond(mobile) {
+			width: 100%;
+			border-radius: 12px;
+		}
+	}
+
+	&__card-overlay {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: var(--transition-default);
+		@include hover {
+			transform: scale(1.2);
+		}
+	}
+
+	&__card-play {
+		@include absolute-center;
+		display: flex;
+		width: 64px;
+		height: 64px;
+		padding: 4.197px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1/1;
+		border-radius: 54.208px;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.2) 0%,
+			rgba(186, 186, 186, 0.2) 100%
+		);
+		backdrop-filter: blur(1.6087429523468018px);
+	}
+
+	&__card-quotes {
+		color: var(--color-accent);
+		font-size: 54px;
+		font-weight: 500;
+		line-height: 130%;
+		height: 30px;
+		margin-bottom: 12px;
+	}
+
+	&__card-title {
+		color: var(--color-title);
+		font-family: var(--font-title);
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 130%;
+		margin-bottom: 32px;
+		@include respond(tablet) {
+			font-size: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__card-text {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 130%;
+		min-height: 150px;
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			font-size: 16px;
+			min-height: 120px;
+		}
+	}
+
+	&__card-bottom {
+		border-top: 1px solid #cdcdcd;
+		padding-top: 16px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include respond(tablet) {
+			padding-top: 12px;
+		}
+	}
+
+	&__card-user {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__card-user-avatar {
+		width: 32px;
+		height: 32px;
+		object-fit: cover;
+		aspect-ratio: 1/1;
+		border-radius: 32px;
+	}
+
+	&__card-user-name {
+		color: var(--color-title);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 130%;
+		margin-bottom: 4px;
+		@include respond(tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__card-user-position {
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 130%;
+		@include respond(tablet) {
+			font-size: 12px;
+		}
+	}
+
+	&__card-rating {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		p {
+			color: var(--color-title);
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 130%;
+			@include respond(tablet) {
+				font-size: 14px;
+			}
+		}
+	}
+
+	&__card-stars {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		color: #fed53e;
+		font-size: 24px;
+	}
+
+	&__control {
+		margin-top: 32px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 32px;
+		@include respond(tablet) {
+			margin-top: 16px;
+			flex-direction: column;
+			gap: 16px;
+			align-items: flex-end;
+		}
+	}
+
+	&__scrollbar {
+		width: 100%;
+		height: 4px;
+		border-radius: 2px;
+		background: #cdcdcd;
+		@include respond(tablet) {
+			height: 2px;
+		}
+		.swiper-scrollbar-drag {
+			height: 4px;
+			border-radius: 2px;
+			background: #07f;
+			@include respond(tablet) {
+				height: 2px;
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		@include respond(tablet) {
+			gap: 8px;
+			width: 100%;
+		}
+	}
+
+	&__btn-prev {
+		display: flex;
+		width: 48px;
+		height: 48px;
+		padding: 12px;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1/1;
+		stroke: var(--color-title);
+		border-radius: 12px;
+		background: var(--color-bg);
+		transition: var(--transition-default);
+		svg {
+			transition: var(--transition-default);
+		}
+	}
+
+	&__pagination {
+		width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: var(--color-title);
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 130%;
+	}
+
+	&__pagination.desktop {
+		display: flex;
+		@include respond(tablet) {
+			display: none;
+		}
+	}
+
+	&__pagination.mobile {
+		display: none;
+		@include respond(tablet) {
+			display: flex;
+			margin-right: auto;
+		}
+	}
+
+	&__btn-next {
+		display: flex;
+		width: 48px;
+		height: 48px;
+		padding: 12px;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1/1;
+		stroke: var(--color-title);
+		border-radius: 12px;
+		background: var(--color-bg);
+		transition: var(--transition-default);
+		svg {
+			transition: var(--transition-default);
+		}
+	}
+}
+
+.video-modal {
+	position: fixed;
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 9999;
+	transition: var(--transition-default);
+	&.is-open {
+		opacity: 1;
+		pointer-events: all;
+	}
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.5);
+	}
+	&__content {
+		@include absolute-center;
+		width: 40vw;
+		height: auto;
+		background: var(--color-title);
+		z-index: 2;
+		transition: var(--transition-default);
+		@include respond(tablet) {
+			width: 90vw;
+		}
+	}
+	&__frame iframe {
+		width: 100%;
+		height: 500px;
+		@include respond(tablet) {
+			height: 400px;
+		}
+		@include respond(mobile) {
+			height: 350px;
+		}
+	}
+	&__close {
+		position: absolute;
+		top: -60px;
+		right: 0;
+		@include flex-center;
+		padding: 8px;
+		border-radius: 100px;
+		background: var(--color-bg);
+	}
+}

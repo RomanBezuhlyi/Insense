@@ -6,6 +6,11 @@
 		<title>Insense</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="src/assets/icons/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.0/build/css/intlTelInput.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.0/build/js/intlTelInput.min.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -16,11 +21,11 @@
 						<img src="./src/assets/images/logo.svg" alt="" />
 					</a>
 					<nav class="header__nav">
-						<a class="header__nav-item" href="#">Кейси</a>
-						<a class="header__nav-item" href="#">Послуги</a>
-						<a class="header__nav-item" href="#">Відгуки</a>
-						<a class="header__nav-item" href="#">Команда</a>
-						<a class="header__nav-item" href="#">Контакт</a>
+						<a class="header__nav-item" href="#cases">Кейси</a>
+						<a class="header__nav-item" href="#services">Послуги</a>
+						<a class="header__nav-item" href="#reviews">Відгуки</a>
+						<a class="header__nav-item" href="#team">Команда</a>
+						<a class="header__nav-item" href="#contacts">Контакти</a>
 						<ul class="header__nav-contacts">
 							<li class="header__nav-contact">
 								65016, м. Одеса, вул. Новоберегова, 12б
@@ -106,7 +111,10 @@
 								<a class="header__lang-item" href="#">RU</a>
 							</div>
 						</div>
-						<button class="header__btn btn-primary">
+						<button
+							class="header__btn btn-primary"
+							data-modal-open="consultation"
+						>
 							Консультація <i class="icon-arrow"></i>
 						</button>
 						<button class="header__burger">
@@ -152,10 +160,13 @@
 								реклама приносила заявки та продажі, а не просто трафік.
 							</p>
 							<div class="hero__meta">
-								<button class="hero__btn btn-primary">
+								<button
+									class="hero__btn btn-primary"
+									data-modal-open="consultation"
+								>
 									Консультація <i class="icon-arrow"></i>
 								</button>
-								<a class="hero__link btn-secondary" href="#">Наші кейси</a>
+								<a class="hero__link btn-secondary" href="#cases">Наші кейси</a>
 							</div>
 						</div>
 						<ul class="hero__list">
@@ -212,7 +223,10 @@
 									задача — зробити рекламу прибутковою для бізнесу.
 								</p>
 							</div>
-							<button class="about__btn btn-primary">
+							<button
+								class="about__btn btn-primary"
+								data-modal-open="consultation"
+							>
 								Зв’язатись з нами <i class="icon-arrow"></i>
 							</button>
 						</div>
@@ -327,7 +341,10 @@
 											Реклама працює гірше, ніж могла б
 										</li>
 									</ul>
-									<button class="audience__item-btn btn-primary">
+									<button
+										class="audience__item-btn btn-primary"
+										data-modal-open="consultation"
+									>
 										Отримати консультацію <i class="icon-arrow"></i>
 									</button>
 								</div>
@@ -403,7 +420,10 @@
 											Правильна структура рекламних кампаній
 										</li>
 									</ul>
-									<button class="audience__item-btn btn-secondary">
+									<button
+										class="audience__item-btn btn-secondary"
+										data-modal-open="consultation"
+									>
 										Отримати консультацію <i class="icon-arrow"></i>
 									</button>
 								</div>
@@ -417,7 +437,7 @@
 					</div>
 				</div>
 				<!-- === Результати === -->
-				<div class="results">
+				<div class="results" id="cases">
 					<div class="results__container">
 						<div class="results__top">
 							<div class="results__title title">
@@ -469,9 +489,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -510,9 +533,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -551,9 +577,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -592,9 +621,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -625,9 +657,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -658,9 +693,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -699,9 +737,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -740,9 +781,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -781,9 +825,12 @@
 													</li>
 												</ul>
 											</div>
-											<a class="results__card-link" href="#">
+											<button
+												class="results__card-link"
+												data-modal-open="service"
+											>
 												Детальніше про кейс
-											</a>
+											</button>
 										</div>
 										<img
 											class="results__card-img"
@@ -838,11 +885,171 @@
 				<!-- === Форма для аналізу === -->
 				<div class="analyze">
 					<div class="analyze__container">
-						<p>Форма для аналізу</p>
+						<div class="analyze__content">
+							<div class="analyze__top">
+								<img
+									class="analyze__top-logo"
+									src="./src/assets/images/logo.svg"
+									alt=""
+								/>
+								<img
+									class="analyze__top-users"
+									src="./src/assets/images/users.png"
+									alt=""
+								/>
+							</div>
+							<h2 class="analyze__title">
+								Проаналізуємо <span>Ваш</span> сайт або рекламний аккаунт та
+								підкажемо:
+							</h2>
+							<ul class="analyze__list">
+								<li class="analyze__item">
+									<div class="analyze__item-icon">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="14"
+											height="10"
+											viewBox="0 0 14 10"
+											fill="none"
+										>
+											<path
+												d="M0.875 4.66667L4.66667 8.45833L12.25 0.875"
+												stroke="white"
+												stroke-width="1.75"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
+									</div>
+									Що можна покращити, щоб отримувати більше клієнтів
+								</li>
+								<li class="analyze__item">
+									<div class="analyze__item-icon">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="14"
+											height="10"
+											viewBox="0 0 14 10"
+											fill="none"
+										>
+											<path
+												d="M0.875 4.66667L4.66667 8.45833L12.25 0.875"
+												stroke="white"
+												stroke-width="1.75"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
+									</div>
+									Які рекламні канали можуть працювати найкраще
+								</li>
+								<li class="analyze__item">
+									<div class="analyze__item-icon">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="14"
+											height="10"
+											viewBox="0 0 14 10"
+											fill="none"
+										>
+											<path
+												d="M0.875 4.66667L4.66667 8.45833L12.25 0.875"
+												stroke="white"
+												stroke-width="1.75"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
+									</div>
+									Де втрачаються заявки
+								</li>
+							</ul>
+						</div>
+						<div class="analyze__form">
+							<form class="form">
+								<div class="form__success">
+									<div class="form__success-check">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="38"
+											height="27"
+											viewBox="0 0 38 27"
+											fill="none"
+										>
+											<path
+												d="M2.5 13.3333L13.3333 24.1667L35 2.5"
+												stroke="white"
+												stroke-width="5"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
+									</div>
+									<h2 class="form__success-title">Дякуємо!</h2>
+									<p class="form__success-text">
+										Ваша заявка отримана та опрацьовується.Ми зв’яжемось з вами
+										найближчим часом!
+									</p>
+									<h3 class="form__success-subtitle">
+										З повагою, <span>Insense Agency</span>
+									</h3>
+								</div>
+								<div class="form__input">
+									<label class="label" for="name">Ім’я*</label>
+									<input
+										id="name"
+										type="text"
+										placeholder="Як вас звуть?"
+										required
+									/>
+								</div>
+								<div class="form__input">
+									<label class="label" for="number">Номер телефону*</label>
+									<input class="phone-input" id="phone" type="tel" required />
+								</div>
+								<label class="label" for="message">Деталі</label>
+								<div class="form__textarea">
+									<textarea
+										name="message"
+										placeholder="Адреса сайту або короткий опис проекту ( необов’язково )"
+									></textarea>
+								</div>
+								<div class="form__radio">
+									<label class="form__radio-btn">
+										<input
+											type="radio"
+											name="contactMethod"
+											value="call"
+											checked
+										/>
+										Передзвоніть мені
+									</label>
+
+									<label class="form__radio-btn">
+										<input type="radio" name="contactMethod" value="telegram" />
+										Напишіть в телеграм
+									</label>
+								</div>
+
+								<input
+									type="hidden"
+									name="contactMethodHidden"
+									id="contactMethodHidden"
+								/>
+								<button class="btn-primary" type="submit">
+									Отримати консультацію
+									<i class="icon-arrow"></i>
+								</button>
+								<span class="description"
+									>Натискаючи кнопку, ви погоджуєтесь з нашою політикою
+									конфіденційності
+								</span>
+							</form>
+						</div>
 					</div>
 				</div>
 				<!-- === Головна послуга === -->
-				<div class="main-service">
+				<div class="main-service" id="services">
 					<div class="main-service__container">
 						<div class="main-service__content">
 							<div class="main-service__title title">
@@ -855,7 +1062,10 @@
 									приводила клієнтів саме в той момент, коли вони шукають Ваш
 									товар або послугу.
 								</p>
-								<button class="main-service__btn btn-primary">
+								<button
+									class="main-service__btn btn-primary"
+									data-modal-open="consultation"
+								>
 									Замовити послугу
 									<i class="icon-arrow"></i>
 								</button>
@@ -1003,7 +1213,10 @@
 									src="./src/assets/images/services-1.png"
 									alt=""
 								/>
-								<button class="services__item-btn btn-primary">
+								<button
+									class="services__item-btn btn-primary"
+									data-modal-open="consultation"
+								>
 									Замовити послугу
 									<i class="icon-arrow"></i>
 								</button>
@@ -1025,7 +1238,10 @@
 									src="./src/assets/images/services-2.png"
 									alt=""
 								/>
-								<button class="services__item-btn btn-primary">
+								<button
+									class="services__item-btn btn-primary"
+									data-modal-open="consultation"
+								>
 									Замовити послугу
 									<i class="icon-arrow"></i>
 								</button>
@@ -1034,49 +1250,711 @@
 					</div>
 				</div>
 				<!-- === Відгуки === -->
-				<div class="reviews">
+				<div class="reviews" id="reviews">
 					<div class="reviews__container">
-						<p>Відгуки</p>
+						<div class="reviews__top">
+							<div class="reviews__title title">
+								<p>Відгуки</p>
+								<h2><span>Результати</span>, що говорять самі за себе</h2>
+							</div>
+							<div class="reviews__avatars">
+								<img
+									class="reviews__avatars-img"
+									src="./src/assets/images/avatars.png"
+									alt=""
+								/>
+								<p class="reviews__avatars-label">56+ відгуків</p>
+							</div>
+						</div>
+					</div>
+					<div class="reviews__slider swiper">
+						<ul class="reviews__list swiper-wrapper">
+							<li class="reviews__slide swiper-slide">
+								<div class="reviews__card">
+									<div
+										class="reviews__card-video"
+										data-youtube="lF0claY9HM4?si=U1TsrcCgFPDXCemf"
+									>
+										<img
+											class="reviews__card-overlay"
+											src="./src/assets/images/review.png"
+											alt=""
+										/>
+										<div class="reviews__card-play">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="38"
+												height="38"
+												viewBox="0 0 38 38"
+												fill="none"
+											>
+												<path
+													d="M9.35498 4.67773L31.1838 18.7105L9.35498 32.7433V4.67773Z"
+													fill="white"
+												/>
+											</svg>
+										</div>
+									</div>
+									<div class="reviews__card-info">
+										<p class="reviews__card-quotes">“</p>
+										<h4 class="reviews__card-title">
+											Від хаосу в рекламі до стабільних заявок
+										</h4>
+										<p class="reviews__card-text">
+											Завдяки їхній роботі ми значно збільшили кількість заявок
+											з реклами та знизили вартість ліда. Команда глибоко
+											занурилась у наш бізнес, швидко оптимізувала кампанії й
+											допомогла зробити рекламу стабільним джерелом клієнтів.
+										</p>
+										<div class="reviews__card-bottom">
+											<div class="reviews__card-user">
+												<img
+													class="reviews__card-user-avatar"
+													src="./src/assets/images/stub.svg"
+													alt=""
+												/>
+												<div class="reviews__card-user-info">
+													<p class="reviews__card-user-name">Андрій Нагірний</p>
+													<p class="reviews__card-user-position">
+														Founder Smart Trek
+													</p>
+												</div>
+											</div>
+											<div class="reviews__card-rating">
+												<div class="reviews__card-stars">
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+												</div>
+												<p>5.0</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="reviews__slide swiper-slide">
+								<div class="reviews__card">
+									<div
+										class="reviews__card-video"
+										data-youtube="lF0claY9HM4?si=U1TsrcCgFPDXCemf"
+									>
+										<img
+											class="reviews__card-overlay"
+											src="./src/assets/images/review.png"
+											alt=""
+										/>
+										<div class="reviews__card-play">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="38"
+												height="38"
+												viewBox="0 0 38 38"
+												fill="none"
+											>
+												<path
+													d="M9.35498 4.67773L31.1838 18.7105L9.35498 32.7433V4.67773Z"
+													fill="white"
+												/>
+											</svg>
+										</div>
+									</div>
+									<div class="reviews__card-info">
+										<p class="reviews__card-quotes">“</p>
+										<h4 class="reviews__card-title">
+											Від хаосу в рекламі до стабільних заявок
+										</h4>
+										<p class="reviews__card-text">
+											Завдяки їхній роботі ми значно збільшили кількість заявок
+											з реклами та знизили вартість ліда. Команда глибоко
+											занурилась у наш бізнес, швидко оптимізувала кампанії й
+											допомогла зробити рекламу стабільним джерелом клієнтів.
+										</p>
+										<div class="reviews__card-bottom">
+											<div class="reviews__card-user">
+												<img
+													class="reviews__card-user-avatar"
+													src="./src/assets/images/stub.svg"
+													alt=""
+												/>
+												<div class="reviews__card-user-info">
+													<p class="reviews__card-user-name">Андрій Нагірний</p>
+													<p class="reviews__card-user-position">
+														Founder Smart Trek
+													</p>
+												</div>
+											</div>
+											<div class="reviews__card-rating">
+												<div class="reviews__card-stars">
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+												</div>
+												<p>5.0</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="reviews__slide swiper-slide">
+								<div class="reviews__card">
+									<div
+										class="reviews__card-video"
+										data-youtube="lF0claY9HM4?si=U1TsrcCgFPDXCemf"
+									>
+										<img
+											class="reviews__card-overlay"
+											src="./src/assets/images/review.png"
+											alt=""
+										/>
+										<div class="reviews__card-play">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="38"
+												height="38"
+												viewBox="0 0 38 38"
+												fill="none"
+											>
+												<path
+													d="M9.35498 4.67773L31.1838 18.7105L9.35498 32.7433V4.67773Z"
+													fill="white"
+												/>
+											</svg>
+										</div>
+									</div>
+									<div class="reviews__card-info">
+										<p class="reviews__card-quotes">“</p>
+										<h4 class="reviews__card-title">
+											Від хаосу в рекламі до стабільних заявок
+										</h4>
+										<p class="reviews__card-text">
+											Завдяки їхній роботі ми значно збільшили кількість заявок
+											з реклами та знизили вартість ліда. Команда глибоко
+											занурилась у наш бізнес, швидко оптимізувала кампанії й
+											допомогла зробити рекламу стабільним джерелом клієнтів.
+										</p>
+										<div class="reviews__card-bottom">
+											<div class="reviews__card-user">
+												<img
+													class="reviews__card-user-avatar"
+													src="./src/assets/images/stub.svg"
+													alt=""
+												/>
+												<div class="reviews__card-user-info">
+													<p class="reviews__card-user-name">Андрій Нагірний</p>
+													<p class="reviews__card-user-position">
+														Founder Smart Trek
+													</p>
+												</div>
+											</div>
+											<div class="reviews__card-rating">
+												<div class="reviews__card-stars">
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+													<i class="icon-star"></i>
+												</div>
+												<p>5.0</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="reviews__container">
+						<div class="reviews__control">
+							<div class="reviews__scrollbar"></div>
+							<div class="reviews__nav">
+								<div class="reviews__pagination mobile"></div>
+								<button class="reviews__btn-prev">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 16 16"
+										fill="none"
+									>
+										<path
+											d="M12.6665 8.00008L3.33317 8.00008M7.99984 3.33342L3.33317 8.00008L7.99984 12.6667"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</button>
+								<div class="reviews__pagination desktop"></div>
+								<button class="reviews__btn-next">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 16 16"
+										fill="none"
+									>
+										<path
+											d="M3.3335 7.99992H12.6668M8.00016 12.6666L12.6668 7.99992L8.00016 3.33325"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- === Наш процесс === -->
 				<div class="process">
 					<div class="process__container">
-						<p>Наш процесс</p>
+						<div class="process__content">
+							<div class="process__title title">
+								<p>Наш процесс</p>
+								<h2>Як ми <span>працюємо</span> над нашими проєктами</h2>
+								<button class="btn-primary" data-modal-open="consultation">
+									Обговорити проєкт <i class="icon-arrow"></i>
+								</button>
+							</div>
+							<ul class="process__list">
+								<li class="process__item">
+									<img
+										class="process__item-img"
+										src="./src/assets/images/p-1.png"
+										alt=""
+									/>
+									<h4 class="process__item-title">01 Аналіз проєкту</h4>
+									<span class="process__item-line"></span>
+									<p class="process__item-text">
+										Вивчаємо бізнес, сайт, конкурентів і поточну рекламу, щоб
+										оцінити потенціал рекламних кампаній та сформувати ефективну
+										стратегію розвитку.
+									</p>
+								</li>
+								<li class="process__item">
+									<img
+										class="process__item-img"
+										src="./src/assets/images/p-2.png"
+										alt=""
+									/>
+									<h4 class="process__item-title">02 Розробка стратегії</h4>
+									<span class="process__item-line"></span>
+									<p class="process__item-text">
+										Розробляємо стратегію: визначаємо рекламні канали, структуру
+										кампаній, оптимальний бюджет і чіткий план запуску реклами.
+									</p>
+								</li>
+								<li class="process__item">
+									<img
+										class="process__item-img"
+										src="./src/assets/images/p-3.png"
+										alt=""
+									/>
+									<h4 class="process__item-title">03 Запуск реклами</h4>
+									<span class="process__item-line"></span>
+									<p class="process__item-text">
+										Запуск реклами: налаштовуємо рекламні кампанії, аналітику та
+										відстеження конверсій.
+									</p>
+								</li>
+								<li class="process__item">
+									<img
+										class="process__item-img"
+										src="./src/assets/images/p-4.png"
+										alt=""
+									/>
+									<h4 class="process__item-title">04 Оптимізація</h4>
+									<span class="process__item-line"></span>
+									<p class="process__item-text">
+										Оптимізація: аналізуємо результати та покращуємо
+										ефективність реклами, знижуємо вартість заявки, підвищуємо
+										конверсію та відключаємо неефективний трафік.
+									</p>
+								</li>
+								<li class="process__item">
+									<img
+										class="process__item-img"
+										src="./src/assets/images/p-5.png"
+										alt=""
+									/>
+									<h4 class="process__item-title">05 Масштабування</h4>
+									<span class="process__item-line"></span>
+									<p class="process__item-text">
+										Масштабування: коли реклама працює стабільно, масштабуємо
+										результат, збільшуємо бюджети, розширюємо кампанії та
+										підключаємо нові джерела трафіку.
+									</p>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<!-- === Наша команда === -->
-				<div class="team">
+				<div class="team" id="team">
 					<div class="team__container">
-						<p>Наша команда</p>
+						<div class="team__content">
+							<div class="team__title title">
+								<p>Наша команда</p>
+								<h2><span>Експерти</span>, які розвивають ваш бізнес</h2>
+							</div>
+							<p class="team__text">
+								В Insense працюють більше 10 сміливих і амбиціозних
+								спеціалістів: маркетологи, проєктні менеджери, дизайнери,
+								креативники та копірайтери.
+							</p>
+							<div class="team__nav">
+								<div class="team__pagination mobile"></div>
+								<button class="team__btn-prev">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 16 16"
+										fill="none"
+									>
+										<path
+											d="M12.6665 8.00008L3.33317 8.00008M7.99984 3.33342L3.33317 8.00008L7.99984 12.6667"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</button>
+								<div class="team__pagination desktop"></div>
+								<button class="team__btn-next">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 16 16"
+										fill="none"
+									>
+										<path
+											d="M3.3335 7.99992H12.6668M8.00016 12.6666L12.6668 7.99992L8.00016 3.33325"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="team__carousel">
+							<div class="team__slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="team__card">
+											<img
+												class="team__card-img"
+												src="./src/assets/images/t-1.png"
+												alt=""
+											/>
+											<p class="team__card-position">CEO Insense Agency</p>
+											<p class="team__card-name">Микола Феденко</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="team__card">
+											<img
+												class="team__card-img"
+												src="./src/assets/images/t-2.png"
+												alt=""
+											/>
+											<p class="team__card-position">Аналітик</p>
+											<p class="team__card-name">Никита Гордієнко</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="team__card">
+											<img
+												class="team__card-img"
+												src="./src/assets/images/t-3.png"
+												alt=""
+											/>
+											<p class="team__card-position">Аналітик</p>
+											<p class="team__card-name">Данило Нагірний</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="team__card">
+											<img
+												class="team__card-img"
+												src="./src/assets/images/t-1.png"
+												alt=""
+											/>
+											<p class="team__card-position">CEO Insense Agency</p>
+											<p class="team__card-name">Микола Феденко</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="team__scrollbar"></div>
+						</div>
 					</div>
 				</div>
 				<!-- === FAQ === -->
 				<div class="faq">
 					<div class="faq__container">
-						<p>FAQ</p>
+						<div class="faq__left">
+							<div class="faq__title title">
+								<p>FAQ</p>
+								<h2><span>Відповіді</span> на часті питання</h2>
+							</div>
+							<div class="faq__connect desktop">
+								<h5 class="faq__connect-title">Залишись питання?</h5>
+								<p class="faq__connect-text">
+									Не знайшли відповідь на своє запитання? Ви можете написати, чи
+									зателефонувати нам.
+								</p>
+								<button class="btn-primary">
+									Зв’язатися з менеджером <i class="icon-plane"></i>
+								</button>
+							</div>
+						</div>
+						<div class="faq__right">
+							<ul class="faq__list">
+								<li class="faq__item">
+									<div class="faq__item-head">
+										<p class="faq__item-question">Скільки коштує реклама?</p>
+										<button class="faq__item-btn">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="16"
+												height="16"
+												viewBox="0 0 16 16"
+												fill="none"
+											>
+												<path
+													d="M3.33325 7.99992H12.6666M7.99992 3.33325V12.6666"
+													stroke-width="1.33333"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												/>
+											</svg>
+										</button>
+									</div>
+									<div class="faq__item-body">
+										<p class="faq__item-answer">
+											Бюджет залежить від ніші, конкуренції та цілей бізнесу. На
+											консультації ми підкажемо оптимальний бюджет саме для
+											Вашого проекту.
+										</p>
+									</div>
+								</li>
+								<li class="faq__item">
+									<div class="faq__item-head">
+										<p class="faq__item-question">
+											Як оцінити ефективність реклами?
+										</p>
+										<button class="faq__item-btn">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="16"
+												height="16"
+												viewBox="0 0 16 16"
+												fill="none"
+											>
+												<path
+													d="M3.33325 7.99992H12.6666M7.99992 3.33325V12.6666"
+													stroke-width="1.33333"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												/>
+											</svg>
+										</button>
+									</div>
+									<div class="faq__item-body">
+										<p class="faq__item-answer">
+											Бюджет залежить від ніші, конкуренції та цілей бізнесу. На
+											консультації ми підкажемо оптимальний бюджет саме для
+											Вашого проекту.
+										</p>
+									</div>
+								</li>
+								<li class="faq__item">
+									<div class="faq__item-head">
+										<p class="faq__item-question">
+											Чи можна замовити тільки аудит реклами?
+										</p>
+										<button class="faq__item-btn">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="16"
+												height="16"
+												viewBox="0 0 16 16"
+												fill="none"
+											>
+												<path
+													d="M3.33325 7.99992H12.6666M7.99992 3.33325V12.6666"
+													stroke-width="1.33333"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												/>
+											</svg>
+										</button>
+									</div>
+									<div class="faq__item-body">
+										<p class="faq__item-answer">
+											Бюджет залежить від ніші, конкуренції та цілей бізнесу. На
+											консультації ми підкажемо оптимальний бюджет саме для
+											Вашого проекту.
+										</p>
+									</div>
+								</li>
+								<li class="faq__item">
+									<div class="faq__item-head">
+										<p class="faq__item-question">
+											Чи можу я змінити рекламний бюджет під час кампанії?
+										</p>
+										<button class="faq__item-btn">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="16"
+												height="16"
+												viewBox="0 0 16 16"
+												fill="none"
+											>
+												<path
+													d="M3.33325 7.99992H12.6666M7.99992 3.33325V12.6666"
+													stroke-width="1.33333"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												/>
+											</svg>
+										</button>
+									</div>
+									<div class="faq__item-body">
+										<p class="faq__item-answer">
+											Бюджет залежить від ніші, конкуренції та цілей бізнесу. На
+											консультації ми підкажемо оптимальний бюджет саме для
+											Вашого проекту.
+										</p>
+									</div>
+								</li>
+							</ul>
+							<div class="faq__connect mobile">
+								<h5 class="faq__connect-title">Залишись питання?</h5>
+								<p class="faq__connect-text">
+									Не знайшли відповідь на своє запитання? Ви можете написати, чи
+									зателефонувати нам.
+								</p>
+								<button class="btn-primary">
+									Зв’язатися з менеджером <i class="icon-plane"></i>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- === Форма === -->
 				<div class="discussion">
 					<div class="discussion__container">
-						<p>Форма</p>
+						<div class="discussion__img">
+							<img src="./src/assets/images/discussion.png" alt="" />
+						</div>
+						<div class="discussion__form">
+							<form class="form">
+								<div class="form__success">
+									<div class="form__success-check">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="38"
+											height="27"
+											viewBox="0 0 38 27"
+											fill="none"
+										>
+											<path
+												d="M2.5 13.3333L13.3333 24.1667L35 2.5"
+												stroke="white"
+												stroke-width="5"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
+									</div>
+									<h2 class="form__success-title">Дякуємо!</h2>
+									<p class="form__success-text">
+										Ваша заявка отримана та опрацьовується.Ми зв’яжемось з вами
+										найближчим часом!
+									</p>
+									<h3 class="form__success-subtitle">
+										З повагою, <span>Insense Agency</span>
+									</h3>
+								</div>
+								<div class="form__logo">
+									<img src="./src/assets/images/mini-logo.svg" alt="" />
+								</div>
+								<h3 class="form__title">Обговорімо ваш проєкт</h3>
+								<div class="form__input">
+									<label class="label" for="name">Ім’я*</label>
+									<input
+										id="name"
+										type="text"
+										placeholder="Як вас звуть?"
+										required
+									/>
+								</div>
+								<div class="form__input">
+									<label class="label" for="number">Номер телефону*</label>
+									<input class="phone-input" id="phone" type="tel" required />
+								</div>
+								<label class="label" for="message">Деталі</label>
+								<div class="form__textarea">
+									<textarea
+										name="message"
+										placeholder="Адреса сайту або короткий опис проекту ( необов’язково )"
+									></textarea>
+								</div>
+								<div class="form__radio">
+									<label class="form__radio-btn">
+										<input
+											type="radio"
+											name="contactMethod"
+											value="call"
+											checked
+										/>
+										Передзвоніть мені
+									</label>
+
+									<label class="form__radio-btn">
+										<input type="radio" name="contactMethod" value="telegram" />
+										Напишіть в телеграм
+									</label>
+								</div>
+
+								<input
+									type="hidden"
+									name="contactMethodHidden"
+									id="contactMethodHidden"
+								/>
+								<button class="btn-primary" type="submit">
+									Отримати консультацію
+									<i class="icon-arrow"></i>
+								</button>
+								<span class="description"
+									>Натискаючи кнопку, ви погоджуєтесь з нашою політикою
+									конфіденційності
+								</span>
+							</form>
+						</div>
 					</div>
 				</div>
 			</main>
 			<!-- === FOOTER === -->
-			<footer class="footer">
+			<footer class="footer" id="contacts">
 				<div class="footer__container">
 					<div class="footer__top">
 						<a class="footer__logo" href="#">
 							<img src="./src/assets/images/logo-white.svg" alt="" />
 						</a>
 						<nav class="footer__nav desktop">
-							<a class="footer__nav-item" href="#">Кейси</a>
-							<a class="footer__nav-item" href="#">Послуги</a>
-							<a class="footer__nav-item" href="#">Відгуки</a>
-							<a class="footer__nav-item" href="#">Команда</a>
-							<a class="footer__nav-item" href="#">Контакти</a>
+							<a class="footer__nav-item" href="#cases">Кейси</a>
+							<a class="footer__nav-item" href="#services">Послуги</a>
+							<a class="footer__nav-item" href="#reviews">Відгуки</a>
+							<a class="footer__nav-item" href="#team">Команда</a>
+							<a class="footer__nav-item" href="#contacts">Контакти</a>
 						</nav>
 					</div>
 					<div class="footer__middle">
@@ -1215,11 +2093,11 @@
 						</div>
 						<nav class="footer__nav mobile">
 							<p class="footer__nav-item--label">Навігація</p>
-							<a class="footer__nav-item" href="#">Кейси</a>
-							<a class="footer__nav-item" href="#">Послуги</a>
-							<a class="footer__nav-item" href="#">Відгуки</a>
-							<a class="footer__nav-item" href="#">Команда</a>
-							<a class="footer__nav-item" href="#">Контакти</a>
+							<a class="footer__nav-item" href="#cases">Кейси</a>
+							<a class="footer__nav-item" href="#services">Послуги</a>
+							<a class="footer__nav-item" href="#reviews">Відгуки</a>
+							<a class="footer__nav-item" href="#team">Команда</a>
+							<a class="footer__nav-item" href="#contacts">Контакти</a>
 						</nav>
 					</div>
 					<div class="footer__accent">
@@ -1233,6 +2111,305 @@
 					</div>
 				</div>
 			</footer>
+			<!-- === Модальне вікно === -->
+			<div class="modal" data-modal="consultation">
+				<div class="modal__content">
+					<form class="form">
+						<button class="modal__close" data-modal-close>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<path
+									d="M1.99992 2L21.7989 21.799M21.7989 2L1.99992 21.799"
+									stroke="black"
+									stroke-width="4"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</button>
+						<h3 class="modal__title">Заповніть форму</h3>
+						<div class="form__success">
+							<div class="form__success-check">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="38"
+									height="27"
+									viewBox="0 0 38 27"
+									fill="none"
+								>
+									<path
+										d="M2.5 13.3333L13.3333 24.1667L35 2.5"
+										stroke="white"
+										stroke-width="5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</div>
+							<h2 class="form__success-title">Дякуємо!</h2>
+							<p class="form__success-text">
+								Ваша заявка отримана та опрацьовується.Ми зв’яжемось з вами
+								найближчим часом!
+							</p>
+							<h3 class="form__success-subtitle">
+								З повагою, <span>Insense Agency</span>
+							</h3>
+						</div>
+						<div class="form__input">
+							<label class="label" for="name">Ім’я*</label>
+							<input
+								id="name"
+								type="text"
+								placeholder="Як вас звуть?"
+								required
+							/>
+						</div>
+						<div class="form__input">
+							<label class="label" for="number">Номер телефону*</label>
+							<input class="phone-input" id="phone" type="tel" required />
+						</div>
+						<label class="label" for="message">Деталі</label>
+						<div class="form__textarea">
+							<textarea
+								name="message"
+								placeholder="Адреса сайту або короткий опис проекту ( необов’язково )"
+							></textarea>
+						</div>
+						<div class="form__radio">
+							<label class="form__radio-btn">
+								<input type="radio" name="contactMethod" value="call" checked />
+								Передзвоніть мені
+							</label>
+
+							<label class="form__radio-btn">
+								<input type="radio" name="contactMethod" value="telegram" />
+								Напишіть в телеграм
+							</label>
+						</div>
+
+						<input
+							type="hidden"
+							name="contactMethodHidden"
+							id="contactMethodHidden"
+						/>
+						<button class="btn-primary" type="submit">
+							Отримати консультацію
+							<i class="icon-arrow"></i>
+						</button>
+						<span class="description"
+							>Натискаючи кнопку, ви погоджуєтесь з нашою політикою
+							конфіденційності
+						</span>
+					</form>
+				</div>
+			</div>
+
+			<!-- === Попап послуги === -->
+			<div class="popup" data-modal="service">
+				<div class="popup__content">
+					<button class="popup__close" data-modal-close>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+						>
+							<path
+								d="M1.99992 2L21.7989 21.799M21.7989 2L1.99992 21.799"
+								stroke="black"
+								stroke-width="4"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</button>
+					<div class="popup__close-line" data-modal-close></div>
+
+					<div class="popup__container">
+						<div class="popup__body">
+							<div class="popup__top">
+								<div class="popup__title">
+									<h2>Smart Trek</h2>
+									<p>
+										Як системна Google Ads-реклама збільшила кількість заявок та
+										стабілізувала продажі
+									</p>
+								</div>
+								<div class="popup__marks">
+									<p class="popup__label">Послуги</p>
+									<ul class="popup__tags">
+										<li class="popup__tag">
+											Контекстна та таргетована реклама
+										</li>
+										<li class="popup__tag">Автоматизація</li>
+										<li class="popup__tag">Стратегія</li>
+										<li class="popup__tag">Автоматизація</li>
+										<li class="popup__tag">Аналітика</li>
+									</ul>
+								</div>
+							</div>
+							<div class="popup__block">
+								<p class="popup__label">Що за проєкт?</p>
+								<div class="popup__info">
+									<h4 class="popup__info-title">Smart Trek</h4>
+									<p class="popup__info-text">
+										SmartTrek — логістична компанія, що спеціалізується на
+										міжнародних вантажних перевезеннях та комплексних
+										транспортних рішеннях для бізнесу.
+									</p>
+									<p class="popup__info-label">Запрос:</p>
+									<p class="popup__info-text">
+										SmartTrek — логістична компанія, що спеціалізується на
+										міжнародних вантажних перевезеннях та комплексних
+										транспортних рішеннях для бізнесу.
+									</p>
+									<p class="popup__info-label">Рішення:</p>
+									<p class="popup__info-text">
+										Ми розпочали роботу з детального аналізу цільової аудиторії
+										та пошукового попиту у сфері логістичних послуг. На основі
+										отриманих даних була переглянута структура рекламного
+										акаунту, уточнено семантику та переформульовано рекламні
+										повідомлення з акцентом на реальні бізнес-потреби клієнтів.
+									</p>
+									<p class="popup__info-label">Сроки реалізації:</p>
+									<p class="popup__info-text">12.12.2022 - дотепер</p>
+								</div>
+							</div>
+							<img
+								src="./src/assets/images/popup-main-image.png"
+								alt=""
+								class="popup__image"
+							/>
+							<div class="popup__block">
+								<p class="popup__label">Що було зроблено</p>
+								<div class="popup__done"></div>
+							</div>
+							<div class="popup__block">
+								<p class="popup__label">Аналітика</p>
+								<div class="popup__analytics">
+									<p>
+										Якісний аналіз цільової аудиторії дозволив нам глибше
+										зрозуміти запити клієнтів логістичної компанії, оптимізувати
+										структуру рекламних кампаній у Google Ads та суттєво
+										підвищити їхню ефективність.
+									</p>
+									<img src="./src/assets/images/analyticks.png" alt="" />
+								</div>
+							</div>
+							<div class="popup__block">
+								<p class="popup__label">Висновок</p>
+								<div class="popup__conclusion">
+									<p>
+										Навіть при працюючій рекламі акаунт може втрачати значну
+										частину бюджету через неправильну структуру та оптимізацію.
+										У цьому кейсі основний ріст дав не більший бюджет, а
+										системна робота з рекламою та аналітикою.
+									</p>
+								</div>
+							</div>
+							<div class="popup__block">
+								<p class="popup__label">Що дало найбільший ефект</p>
+								<div class="popup__effect">
+									<ul class="popup__effect-list">
+										<li class="popup__effect-item">
+											<span class="popup__effect-icon"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="12"
+													height="9"
+													viewBox="0 0 12 9"
+													fill="none"
+												>
+													<path
+														d="M1 4.25L4.25 7.5L10.75 1"
+														stroke="white"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/></svg
+											></span>
+											️Правильна структура акаунта
+										</li>
+										<li class="popup__effect-item">
+											<span class="popup__effect-icon"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="12"
+													height="9"
+													viewBox="0 0 12 9"
+													fill="none"
+												>
+													<path
+														d="M1 4.25L4.25 7.5L10.75 1"
+														stroke="white"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/></svg
+											></span>
+											Чистка нецільового трафіку
+										</li>
+										<li class="popup__effect-item">
+											<span class="popup__effect-icon"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="12"
+													height="9"
+													viewBox="0 0 12 9"
+													fill="none"
+												>
+													<path
+														d="M1 4.25L4.25 7.5L10.75 1"
+														stroke="white"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/></svg
+											></span>
+											️Фокус на комерційних запитах
+										</li>
+										<li class="popup__effect-item">
+											<span class="popup__effect-icon"
+												><svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="12"
+													height="9"
+													viewBox="0 0 12 9"
+													fill="none"
+												>
+													<path
+														d="M1 4.25L4.25 7.5L10.75 1"
+														stroke="white"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/></svg
+											></span>
+											️Коректна аналітика та оптимізація
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="popup__block">
+								<p class="popup__label">Співпраця</p>
+								<div class="popup__collaboration">
+									<h4>Хочете так само?</h4>
+									<p>Лишить свої дані, і ми зв’яжемось з вами.</p>
+									<button class="btn-primary">
+										Лишити заявку <i class="icon-arrow"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script type="module" src="./main.js"></script>
 	</body>

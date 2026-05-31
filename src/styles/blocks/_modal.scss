@@ -1,0 +1,59 @@
+@use '../utils' as *;
+
+.modal {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	opacity: 0;
+	pointer-events: none;
+	transition: var(--transition-default);
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	&__content {
+		@include absolute-center;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: stretch;
+		max-width: 660px;
+		width: 100%;
+		border-radius: 12px;
+		background: var(--color-bg-accent);
+		@include respond(mobile) {
+			width: 90vw;
+		}
+	}
+
+	&__close {
+		position: relative;
+		@include flex-center;
+		margin-left: auto;
+		margin-bottom: 32px;
+		z-index: 222;
+
+		@include respond(mobile) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__title {
+		margin: auto;
+		color: var(--color-title);
+		text-align: center;
+		font-family: var(--font-title);
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 110%;
+		margin-bottom: 32px;
+		@include respond(tablet) {
+			font-size: 24px;
+		}
+	}
+}
+
+.modal.active {
+	opacity: 1;
+	pointer-events: all;
+}

@@ -1,13 +1,15 @@
 import '@/styles/main.scss'
 
 import { initSliders } from '@/js/modules/slider'
-import { initPhoneMask } from '@/js/modules/phoneMask'
 import { initAccordion } from '@/js/modules/accordion'
 import { initMobileMenu } from '@/js/modules/mobileMenu'
 import { initHeaderDropdown } from '@/js/modules/dropdown'
 import { initTabs } from '@/js/modules/tabs'
-import { initHeroWords } from '@/js/modules/heroWords.js'
-import { initServicesAccordion } from '@/js/modules/servicesAccordion.js'
+import { initHeroWords } from '@/js/modules/heroWords'
+import { initServicesAccordion } from '@/js/modules/servicesAccordion'
+import { initReviewsVideoModal } from '@/js/modules/reviewsVideo'
+import { initForms } from '@/js/modules/form'
+import { initModals } from '@/js/modules/modals'
 
 document.addEventListener('DOMContentLoaded', () => {
 	initMobileMenu({
@@ -23,18 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		swiper: resultsSlider,
 	})
 	initHeroWords()
-	// initPhoneMask('.number-mask')
-	// initAccordion({
-	// 	rootSelector: '.faq',
-	// 	itemSelector: '.faq__item',
-	// 	triggerSelector: '.faq__toggle',
-	// 	contentSelector: '.faq__body',
-	// 	activeClass: 'is-open',
-	// })
+	initAccordion({
+		rootSelector: '.faq',
+		itemSelector: '.faq__item',
+		triggerSelector: '.faq__item-btn',
+		contentSelector: '.faq__item-body',
+		activeClass: 'is-open',
+	})
 	initHeaderDropdown({
 		itemSelector: '.header__lang',
 		triggerSelector: '.header__lang-current',
 		activeClass: 'is-open',
 	})
 	initServicesAccordion()
+	initReviewsVideoModal()
+	initForms()
+	initModals()
 })

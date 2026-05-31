@@ -1,1 +1,106 @@
 @use '../utils' as *;
+
+.process {
+	padding: 128px 0;
+	@include respond(tablet) {
+		padding: 72px 0;
+	}
+	&__content {
+		position: relative;
+		display: flex;
+		gap: 20px;
+		align-items: flex-start;
+		@include respond(mobile) {
+			flex-direction: column;
+		}
+	}
+	&__title {
+		position: sticky;
+		top: 0;
+		max-width: 660px;
+		padding: 50px 0;
+		@include respond(tablet) {
+			padding: 30px 0;
+		}
+		@include respond(mobile) {
+			position: static;
+			padding: 0;
+		}
+	}
+	.btn-primary {
+		margin-top: 24px;
+		@include respond(mobile) {
+			width: 100%;
+		}
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 96px;
+		@include respond(tablet) {
+			gap: 24px;
+		}
+	}
+	&__item {
+		width: 660px;
+		@include respond(tablet) {
+			width: 375px;
+		}
+		@include respond(mobile) {
+			width: 100%;
+			margin-bottom: 16px;
+		}
+	}
+	&__item-img {
+		width: 100%;
+		height: 400px;
+		aspect-ratio: 33/20;
+		object-fit: cover;
+		border-radius: 16px;
+		margin-bottom: 32px;
+		@include respond(tablet) {
+			height: 245px;
+			margin-bottom: 16px;
+		}
+		@include respond(mobile) {
+			height: 245px;
+			margin-bottom: 16px;
+		}
+	}
+	&__item-title {
+		color: var(--color-title);
+		font-family: var(--font-title);
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 110%;
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			font-size: 18px;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__item-line {
+		display: block;
+		width: 100%;
+		height: 4px;
+		border-radius: 2px;
+		background: var(--color-accent);
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			height: 2px;
+			margin-bottom: 16px;
+		}
+		@include respond(mobile) {
+			display: none;
+		}
+	}
+	&__item-text {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 130%;
+		@include respond(tablet) {
+			font-size: 16px;
+		}
+	}
+}

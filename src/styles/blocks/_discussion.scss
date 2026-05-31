@@ -1,1 +1,43 @@
 @use '../utils' as *;
+.discussion {
+	margin-bottom: 128px;
+	@include respond(tablet) {
+		margin-bottom: 72px;
+	}
+	&__container {
+		display: flex;
+		align-items: flex-start;
+		width: 100%;
+		gap: 20px;
+		@include respond(tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__img {
+		width: 50%;
+		height: 690px;
+		border-radius: 12px;
+		overflow: hidden;
+		@include respond(tablet) {
+			width: 100%;
+			height: 400px;
+		}
+		@include respond(mobile) {
+			width: 100%;
+			height: 220px;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__form {
+		width: 50%;
+		@include respond(tablet) {
+			width: 100%;
+		}
+	}
+}
