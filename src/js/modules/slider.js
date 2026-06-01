@@ -1,20 +1,21 @@
 import Swiper from 'swiper'
-import { Navigation, Scrollbar } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/scrollbar'
 
 export function initSliders() {
 	let resultsSlider = null
 	let reviewsSlider = null
 	let teamSlider = null
 
+	// ================= RESULTS =================
 	if (document.querySelector('.results__slider')) {
+		const progressFill = document.querySelector('.results__progress-fill')
 		const paginations = document.querySelectorAll('.results__pagination')
 
 		resultsSlider = new Swiper('.results__slider', {
-			modules: [Navigation, Scrollbar],
+			modules: [Navigation],
 
 			observer: true,
 			observeParents: true,
@@ -22,11 +23,6 @@ export function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 16,
 			speed: 800,
-
-			scrollbar: {
-				el: '.results__scrollbar',
-				draggable: true,
-			},
 
 			navigation: {
 				prevEl: '.results__btn-prev',
@@ -35,52 +31,34 @@ export function initSliders() {
 
 			on: {
 				init(swiper) {
-					updateFraction(swiper)
+					requestAnimationFrame(() => updateUI(swiper))
 				},
-
 				slideChange(swiper) {
-					updateFraction(swiper)
+					updateUI(swiper)
 				},
 			},
 		})
 
-		function updateFraction(swiper) {
-			const visibleSlides = [...swiper.slides].filter(
-				(slide) => !slide.classList.contains('is-hidden')
-			)
-
-			const current = String(swiper.realIndex + 1).padStart(2, '0')
-			const total = String(visibleSlides.length).padStart(2, '0')
-
-			paginations.forEach((el) => {
-				el.textContent = `${current}/${total}`
-			})
+		function updateUI(swiper) {
+			updateProgress(swiper, progressFill)
+			updateFraction(swiper, paginations)
 		}
 	}
 
+	// ================= REVIEWS =================
 	if (document.querySelector('.reviews__slider')) {
+		const progressFill = document.querySelector('.reviews__progress-fill')
 		const paginations = document.querySelectorAll('.reviews__pagination')
 
 		reviewsSlider = new Swiper('.reviews__slider', {
-			modules: [Navigation, Scrollbar],
+			modules: [Navigation],
 
 			observer: true,
 			observeParents: true,
-			centeredSlides: false,
 
 			slidesPerView: 1,
 			spaceBetween: 16,
 			speed: 800,
-
-			scrollbar: {
-				el: '.reviews__scrollbar',
-				draggable: true,
-			},
-
-			navigation: {
-				prevEl: '.reviews__btn-prev',
-				nextEl: '.reviews__btn-next',
-			},
 
 			breakpoints: {
 				1200: {
@@ -90,36 +68,34 @@ export function initSliders() {
 				},
 			},
 
+			navigation: {
+				prevEl: '.reviews__btn-prev',
+				nextEl: '.reviews__btn-next',
+			},
+
 			on: {
 				init(swiper) {
-					updateFraction(swiper)
+					requestAnimationFrame(() => updateUI(swiper))
 				},
-
 				slideChange(swiper) {
-					updateFraction(swiper)
+					updateUI(swiper)
 				},
 			},
 		})
 
-		function updateFraction(swiper) {
-			const visibleSlides = [...swiper.slides].filter(
-				(slide) => !slide.classList.contains('is-hidden')
-			)
-
-			const current = String(swiper.realIndex + 1).padStart(2, '0')
-			const total = String(visibleSlides.length).padStart(2, '0')
-
-			paginations.forEach((el) => {
-				el.textContent = `${current}/${total}`
-			})
+		function updateUI(swiper) {
+			updateProgress(swiper, progressFill)
+			updateFraction(swiper, paginations)
 		}
 	}
 
+	// ================= TEAM =================
 	if (document.querySelector('.team__slider')) {
+		const progressFill = document.querySelector('.team__progress-fill')
 		const paginations = document.querySelectorAll('.team__pagination')
 
-		reviewsSlider = new Swiper('.team__slider', {
-			modules: [Navigation, Scrollbar],
+		teamSlider = new Swiper('.team__slider', {
+			modules: [Navigation],
 
 			observer: true,
 			observeParents: true,
@@ -127,16 +103,6 @@ export function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 16,
 			speed: 800,
-
-			scrollbar: {
-				el: '.team__scrollbar',
-				draggable: true,
-			},
-
-			navigation: {
-				prevEl: '.team__btn-prev',
-				nextEl: '.team__btn-next',
-			},
 
 			breakpoints: {
 				991: {
@@ -149,29 +115,66 @@ export function initSliders() {
 				},
 			},
 
+			navigation: {
+				prevEl: '.team__btn-prev',
+				nextEl: '.team__btn-next',
+			},
+
 			on: {
 				init(swiper) {
-					updateFraction(swiper)
+					requestAnimationFrame(() => updateUI(swiper))
 				},
-
 				slideChange(swiper) {
-					updateFraction(swiper)
+					updateUI(swiper)
 				},
 			},
 		})
 
-		function updateFraction(swiper) {
-			const visibleSlides = [...swiper.slides].filter(
-				(slide) => !slide.classList.contains('is-hidden')
-			)
-
-			const current = String(swiper.realIndex + 1).padStart(2, '0')
-			const total = String(visibleSlides.length).padStart(2, '0')
-
-			paginations.forEach((el) => {
-				el.textContent = `${current}/${total}`
-			})
+		function updateUI(swiper) {
+			updateProgress(swiper, progressFill)
+			updateFraction(swiper, paginations)
 		}
+	}
+
+	// ================= HELPERS =================
+
+	function updateProgress(swiper, el) {
+		if (!el) return
+
+		const total = swiper.snapGrid.length
+		const current = swiper.snapIndex
+
+		const progress = total > 1 ? (current / (total - 1)) * 100 : 100
+
+		el.style.width = `${progress}%`
+	}
+
+	function updateFraction(swiper, els) {
+		// 🔥 FIX: тільки видимі slides (tabs-safe)
+		const visibleSlides = swiper.slides.filter((slide) => {
+			return getComputedStyle(slide).display !== 'none'
+		})
+
+		const total = visibleSlides.length
+		const current = swiper.realIndex + 1
+
+		els.forEach((el) => {
+			el.textContent = `${String(current).padStart(2, '0')}/${String(
+				total
+			).padStart(2, '0')}`
+		})
+	}
+
+	// ================= TABS FIX =================
+	window.updateResultsSlider = function () {
+		if (!resultsSlider) return
+
+		requestAnimationFrame(() => {
+			resultsSlider.update()
+			resultsSlider.updateSlides()
+			resultsSlider.updateProgress()
+			resultsSlider.updateSize()
+		})
 	}
 
 	return {

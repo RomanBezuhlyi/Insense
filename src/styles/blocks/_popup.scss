@@ -19,6 +19,9 @@
 		border-radius: 28px 28px 0 0;
 		transition: var(--transition-default);
 		transform: translateY(800px);
+		@include respond(tablet) {
+			padding: 16px 0 0 0;
+		}
 	}
 
 	&__close {
@@ -29,6 +32,11 @@
 		@include flex-center;
 		border-radius: 100px;
 		background: #fff;
+		@include respond(tablet) {
+			width: 48px;
+			height: 48px;
+			padding: 8px;
+		}
 	}
 
 	&__close-line {
@@ -39,26 +47,41 @@
 		background: #a4a3a6;
 		cursor: pointer;
 		margin-bottom: 32px;
+		@include respond(tablet) {
+			width: 75px;
+			height: 4px;
+		}
 	}
 
 	&__body {
-		height: calc(100vh - 400px);
+		height: calc(100vh - 200px);
 		display: flex;
 		flex-direction: column;
 		gap: 128px;
 		overflow-y: scroll;
 		padding-bottom: 96px;
+		@include respond(tablet) {
+			gap: 72px;
+		}
 	}
 
 	&__top {
 		display: flex;
 		justify-content: space-between;
 		gap: 12px;
+		@include respond(tablet) {
+			flex-direction: column;
+			justify-content: flex-start;
+			gap: 24px;
+		}
 	}
 
 	&__title {
 		max-width: 782px;
 		width: 100%;
+		@include respond(tablet) {
+			max-width: 100%;
+		}
 		h2 {
 			color: var(--color-title);
 			font-family: var(--font-title);
@@ -67,6 +90,9 @@
 			line-height: 110%;
 			letter-spacing: -0.4px;
 			margin-bottom: 24px;
+			@include respond(tablet) {
+				font-size: 24px;
+			}
 		}
 		p {
 			color: var(--color-title);
@@ -74,6 +100,9 @@
 			font-size: 24px;
 			font-weight: 400;
 			line-height: 130%;
+			@include respond(tablet) {
+				font-size: 16px;
+			}
 		}
 	}
 
@@ -81,6 +110,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
+		@include respond(tablet) {
+			gap: 12px;
+		}
 	}
 
 	&__label {
@@ -89,6 +121,10 @@
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 130%;
+		@include respond(tablet) {
+			font-size: 12px;
+			max-width: 100%;
+		}
 	}
 
 	&__tags {
@@ -107,6 +143,9 @@
 		line-height: 130%;
 		border-radius: 100px;
 		background: var(--color-bg-accent);
+		@include respond(tablet) {
+			font-size: 12px;
+		}
 	}
 
 	&__block {
@@ -114,6 +153,10 @@
 		width: 100%;
 		display: flex;
 		gap: 20px;
+		@include respond(tablet) {
+			max-width: 100%;
+			flex-direction: column;
+		}
 	}
 
 	&__info {
@@ -126,6 +169,9 @@
 		font-weight: 400;
 		line-height: 130%;
 		margin-bottom: 24px;
+		@include respond(tablet) {
+			font-size: 16px;
+		}
 	}
 
 	&__info-label {
@@ -133,6 +179,9 @@
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 130%;
+		@include respond(tablet) {
+			font-size: 12px;
+		}
 	}
 
 	&__info-text {
@@ -140,13 +189,98 @@
 		font-size: 18px;
 		font-weight: 500;
 		line-height: 130%;
+		@include respond(tablet) {
+			font-size: 16px;
+		}
 	}
 
-	&__image {
+	&__image img {
 		width: 100%;
 		height: 500px;
 		object-fit: cover;
 		border-radius: 28px;
+	}
+
+	&__done {
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+		}
+		&-item {
+			position: relative;
+			display: flex;
+			gap: 16px;
+		}
+		&-item:not(:last-child) {
+			&::before {
+				content: '';
+				position: absolute;
+				left: 12px;
+				top: 20px;
+				display: block;
+				width: 2px;
+				height: calc(100% + 20px);
+				background: var(--color-accent);
+			}
+		}
+		.num {
+			position: relative;
+			z-index: 2;
+			@include flex-center;
+			width: 28px;
+			height: 28px;
+			flex-shrink: 0;
+			aspect-ratio: 1/1;
+			color: var(--color-bg);
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 130%;
+			border-radius: 87.5px;
+			background: var(--color-accent);
+			@include respond(tablet) {
+				font-size: 12px;
+			}
+		}
+		&-info {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+		&-head {
+			display: flex;
+			align-items: center;
+			height: 44px;
+			padding: 16px;
+			color: var(--color-title);
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 130%;
+			border-radius: 8px;
+			background: #f4f3f8;
+			@include respond(tablet) {
+				font-size: 14px;
+			}
+		}
+		&-tags {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 8px;
+		}
+		&-tag {
+			@include flex-center;
+			padding: 8px 16px;
+			color: var(--color-title);
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 130%;
+			border-radius: 100px;
+			border: 1px solid #000;
+			@include respond(tablet) {
+				font-size: 12px;
+			}
+		}
 	}
 
 	&__analytics {
@@ -156,24 +290,33 @@
 			font-weight: 500;
 			line-height: 130%;
 			margin-bottom: 48px;
+			@include respond(tablet) {
+				font-size: 14px;
+			}
 		}
 		img {
 			width: 100%;
 			height: 405px;
-			aspect-ratio: 86/45;
 			object-fit: cover;
+			@include respond(tablet) {
+				height: 178px;
+			}
 		}
 	}
 
 	&__effect-list {
 		display: flex;
-		width: 549px;
+		max-width: 549px;
 		padding: 24px;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 24px;
 		border-radius: 16px;
 		background: var(--color-bg-accent);
+		@include respond(tablet) {
+			max-width: 100%;
+			gap: 16px;
+		}
 	}
 
 	&__effect-item {
@@ -188,6 +331,9 @@
 		line-height: 110%;
 		border-radius: 16px;
 		background: var(--color-bg);
+		@include respond(tablet) {
+			font-size: 16px;
+		}
 	}
 
 	&__effect-icon {
@@ -208,6 +354,126 @@
 			font-size: 18px;
 			font-weight: 500;
 			line-height: 130%;
+			@include respond(tablet) {
+				font-size: 14px;
+			}
+		}
+	}
+
+	&__results {
+		h3 {
+			color: var(--color-title);
+			font-family: var(--font-title);
+			font-size: 32px;
+			font-weight: 400;
+			line-height: 110%;
+			margin-bottom: 24px;
+			@include respond(tablet) {
+				font-size: 16px;
+				margin-bottom: 32px;
+			}
+		}
+
+		.stats-table {
+			border-collapse: collapse;
+			font-size: 14px;
+			color: var(--color-title);
+			margin-bottom: 64px;
+			@include respond(tablet) {
+				font-size: 12px;
+				margin-bottom: 32px;
+			}
+
+			th,
+			td {
+				padding: 16px 32px;
+				border-right: 1px solid #605f5f;
+				text-align: center;
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+			th {
+				padding: 0;
+				border: none;
+			}
+
+			thead {
+				th {
+					color: #605f5f;
+					font-size: 14px;
+					@include respond(tablet) {
+						font-size: 12px;
+					}
+				}
+			}
+
+			tbody {
+				tr:not(:first-child) {
+					border-top: 1px solid #605f5f;
+				}
+			}
+
+			td:first-child,
+			th:first-child {
+				text-align: left;
+				min-width: 200px;
+				@include respond(tablet) {
+					min-width: 139px;
+				}
+			}
+
+			td:nth-child(2n) {
+				color: #605f5f;
+			}
+
+			&__highlight {
+				color: var(--color-accent);
+			}
+		}
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			@include respond(tablet) {
+				gap: 16px;
+			}
+		}
+
+		&-item {
+			display: flex;
+			align-items: center;
+			gap: 24px;
+			color: var(--color-title);
+			font-family: var(--font-title);
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 130%;
+			@include respond(tablet) {
+				gap: 12px;
+				font-size: 14px;
+			}
+			.num {
+				@include flex-center;
+				width: 64px;
+				height: 64px;
+				padding: 16px;
+				color: var(--color-accent);
+				font-size: 24px;
+				font-weight: 600;
+				line-height: 130%;
+				border-radius: 16px;
+				background: #f4f3f8;
+				@include respond(tablet) {
+					width: 32px;
+					height: 32px;
+					padding: 8px;
+					font-size: 14px;
+					border-radius: 8px;
+				}
+			}
 		}
 	}
 
@@ -219,6 +485,9 @@
 			font-weight: 400;
 			line-height: 130%;
 			margin-bottom: 16px;
+			@include respond(tablet) {
+				font-size: 16px;
+			}
 		}
 		p {
 			color: var(--color-title);
@@ -226,6 +495,9 @@
 			font-weight: 500;
 			line-height: 130%;
 			margin-bottom: 24px;
+			@include respond(tablet) {
+				font-size: 16px;
+			}
 		}
 	}
 }

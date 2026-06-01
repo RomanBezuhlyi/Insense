@@ -49,6 +49,18 @@
 		@include respond(mobile) {
 			width: 100%;
 			margin-bottom: 16px;
+			padding-bottom: 24px;
+			border-bottom: 1px solid #e5e6e6;
+		}
+	}
+
+	&__item.is-open {
+		.process__item-btn {
+			stroke: var(--color-accent);
+			transform: rotate(45deg);
+			border-radius: 100px;
+			border: 0.5px solid #e7eff9;
+			background: #e7eff9;
 		}
 	}
 	&__item-img {
@@ -78,6 +90,25 @@
 			font-size: 18px;
 			margin-bottom: 16px;
 		}
+		@include respond(mobile) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__item-btn {
+		display: none;
+		@include respond(mobile) {
+			width: 32px;
+			height: 32px;
+			aspect-ratio: 1/1;
+			@include flex-center;
+			stroke: var(--color-title);
+			border-radius: 100px;
+			border: 0.5px solid #e5e6e6;
+			transition: var(--transition-default);
+		}
 	}
 
 	&__item-line {
@@ -101,6 +132,11 @@
 		line-height: 130%;
 		@include respond(tablet) {
 			font-size: 16px;
+		}
+		@include respond(mobile) {
+			max-height: 0;
+			overflow: hidden;
+			transition: var(--transition-default);
 		}
 	}
 }

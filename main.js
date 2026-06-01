@@ -32,6 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		contentSelector: '.faq__item-body',
 		activeClass: 'is-open',
 	})
+	initAccordion({
+		rootSelector: '.process',
+		itemSelector: '.process__item',
+		triggerSelector: '.process__item-btn',
+		contentSelector: '.process__item-text',
+		activeClass: 'is-open',
+	})
 	initHeaderDropdown({
 		itemSelector: '.header__lang',
 		triggerSelector: '.header__lang-current',

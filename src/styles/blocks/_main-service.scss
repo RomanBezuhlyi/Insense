@@ -74,7 +74,7 @@
 		width: 100%;
 		display: flex;
 		gap: 20px;
-		transition: var(--transition-default);
+		transition: all 0.8s;
 		padding: 32px;
 		border-radius: 8px;
 		@include hover {
