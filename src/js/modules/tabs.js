@@ -10,25 +10,27 @@ export function initTabs({
 	if (!tabs.length || !slides.length) return
 
 	function filterSlides(category) {
-		slides.forEach(slide => {
-			const slideCategory = slide.dataset.category
+		const sliderEl = document.querySelector('.results__slider')
 
-			if (slideCategory === category) {
-				slide.style.display = ''
-			} else {
-				slide.style.display = 'none'
-			}
-		})
+		sliderEl.classList.add('is-changing')
 
-		swiper.update()
-		swiper.slideTo(0)
+		setTimeout(() => {
+			slides.forEach((slide) => {
+				slide.style.display = slide.dataset.category === category ? '' : 'none'
+			})
+
+			swiper.update()
+			swiper.slideTo(0, 0)
+
+			sliderEl.classList.remove('is-changing')
+		}, 300)
 	}
 
-	tabs.forEach(tab => {
+	tabs.forEach((tab) => {
 		tab.addEventListener('click', () => {
 			const category = tab.dataset.tab
 
-			tabs.forEach(btn => {
+			tabs.forEach((btn) => {
 				btn.classList.remove(activeClass)
 			})
 

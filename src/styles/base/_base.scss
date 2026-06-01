@@ -22,6 +22,10 @@ body {
 	padding-inline: var(--container-padding);
 }
 
+.wrapper {
+	overflow: hidden;
+}
+
 .title {
 	width: 100%;
 	p {
@@ -140,4 +144,36 @@ body {
 
 body.lock {
 	overflow: hidden;
+}
+
+[data-animate] {
+	opacity: 0;
+	transition: all 0.8s ease;
+	will-change: transform, opacity;
+}
+
+/* вниз → вгору */
+[data-animate='fade-up'] {
+	transform: translateY(40px);
+}
+
+/* вгору → вниз */
+[data-animate='fade-down'] {
+	transform: translateY(-40px);
+}
+
+/* зліва → вправо */
+[data-animate='fade-right'] {
+	transform: translateX(-40px);
+}
+
+/* справа → вліво */
+[data-animate='fade-left'] {
+	transform: translateX(40px);
+}
+
+/* активний стан */
+[data-animate].is-visible {
+	opacity: 1;
+	transform: translate(0, 0);
 }

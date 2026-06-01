@@ -6,6 +6,7 @@
 	background: rgba(0, 0, 0, 0.5);
 	z-index: 1000;
 	opacity: 0;
+	visibility: hidden;
 	pointer-events: none;
 	transition: var(--transition-default);
 	overflow-y: auto;
@@ -56,4 +57,5 @@
 .modal.active {
 	opacity: 1;
 	pointer-events: all;
+	visibility: visible;
 }

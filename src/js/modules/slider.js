@@ -142,9 +142,9 @@ export function initSliders() {
 		if (!el) return
 
 		const total = swiper.snapGrid.length
-		const current = swiper.snapIndex
+		const current = swiper.snapIndex + 1
 
-		const progress = total > 1 ? (current / (total - 1)) * 100 : 100
+		const progress = (current / total) * 100
 
 		el.style.width = `${progress}%`
 	}

@@ -10,6 +10,7 @@ import { initServicesAccordion } from '@/js/modules/servicesAccordion'
 import { initReviewsVideoModal } from '@/js/modules/reviewsVideo'
 import { initForms } from '@/js/modules/form'
 import { initModals } from '@/js/modules/modals'
+import { initScrollAnimations } from './src/js/modules/animation'
 
 document.addEventListener('DOMContentLoaded', () => {
 	initMobileMenu({
@@ -48,4 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	initReviewsVideoModal()
 	initForms()
 	initModals()
+	initScrollAnimations()
 })

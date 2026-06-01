@@ -24,21 +24,6 @@
 		}
 	}
 
-	&__close {
-		position: absolute;
-		top: -72px;
-		right: 40px;
-		padding: 8px;
-		@include flex-center;
-		border-radius: 100px;
-		background: #fff;
-		@include respond(tablet) {
-			width: 48px;
-			height: 48px;
-			padding: 8px;
-		}
-	}
-
 	&__close-line {
 		margin: auto;
 		width: 286px;
@@ -54,7 +39,7 @@
 	}
 
 	&__body {
-		height: calc(100vh - 200px);
+		height: calc(100vh - 100px);
 		display: flex;
 		flex-direction: column;
 		gap: 128px;
