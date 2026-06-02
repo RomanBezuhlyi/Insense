@@ -4,13 +4,14 @@
 	padding: 128px 0;
 	@include respond(tablet) {
 		padding: 72px 0;
+		overflow-x: hidden;
 	}
 	&__content {
 		position: relative;
 		display: flex;
 		gap: 20px;
 		align-items: flex-start;
-		@include respond(mobile) {
+		@include respond(tablet) {
 			flex-direction: column;
 		}
 	}

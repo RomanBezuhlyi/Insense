@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .services {
+	overflow-x: hidden;
 	margin-bottom: 128px;
 	@include respond(tablet) {
 		margin-bottom: 72px;

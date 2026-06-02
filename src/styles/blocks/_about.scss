@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .about {
+	overflow-x: hidden;
 	margin-bottom: 96px;
 	@include respond(tablet) {
 		margin-bottom: 72px;

@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .results {
+	overflow-x: hidden;
 	background: var(--color-bg-accent);
 	padding-bottom: 96px;
 	@include respond(tablet) {
@@ -354,4 +355,17 @@
 
 .swiper-button-disabled {
 	background: transparent;
+}
+
+.results__card-content {
+	opacity: 0;
+	transform: translateY(18px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	will-change: opacity, transform;
+}
+
+/* коли слайд "активується через JS" */
+.results__item.is-animating .results__card-content {
+	opacity: 1;
+	transform: translateY(0);
 }

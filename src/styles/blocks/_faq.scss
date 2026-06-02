@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .faq {
+	overflow-x: hidden;
 	padding: 128px 0;
 	@include respond(tablet) {
 		padding: 72px 0;

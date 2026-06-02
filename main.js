@@ -1,6 +1,5 @@
 import '@/styles/main.scss'
 
-import { initSliders } from '@/js/modules/slider'
 import { initAccordion } from '@/js/modules/accordion'
 import { initMobileMenu } from '@/js/modules/mobileMenu'
 import { initHeaderDropdown } from '@/js/modules/dropdown'
@@ -11,6 +10,9 @@ import { initReviewsVideoModal } from '@/js/modules/reviewsVideo'
 import { initForms } from '@/js/modules/form'
 import { initModals } from '@/js/modules/modals'
 import { initScrollAnimations } from './src/js/modules/animation'
+import { initTeamSlider } from './src/js/modules/teamSlider'
+import { initReviewsSlider } from './src/js/modules/reviewsSlider'
+import { initResultsSlider } from '@/js/modules/resultsSlider'
 
 document.addEventListener('DOMContentLoaded', () => {
 	initMobileMenu({
@@ -19,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		activeClass: 'is-open',
 		lockClass: 'lock',
 	})
-	const { resultsSlider } = initSliders()
+	const { resultsSlider } = initResultsSlider()
+	initTeamSlider()
+	initReviewsSlider()
 	initTabs({
 		tabsSelector: '.results__tab',
 		slideSelector: '.results__item',

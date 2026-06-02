@@ -9,6 +9,12 @@ export function initTabs({
 
 	if (!tabs.length || !slides.length) return
 
+	function getCategoryTotal(category) {
+		return Array.from(slides).filter(
+			(slide) => slide.dataset.category === category
+		).length
+	}
+
 	function filterSlides(category) {
 		const sliderEl = document.querySelector('.results__slider')
 
@@ -22,6 +28,8 @@ export function initTabs({
 			swiper.update()
 			swiper.slideTo(0, 0)
 
+			window.updateResultsSlider?.(category)
+
 			sliderEl.classList.remove('is-changing')
 		}, 300)
 	}
@@ -30,17 +38,13 @@ export function initTabs({
 		tab.addEventListener('click', () => {
 			const category = tab.dataset.tab
 
-			tabs.forEach((btn) => {
-				btn.classList.remove(activeClass)
-			})
-
+			tabs.forEach((btn) => btn.classList.remove(activeClass))
 			tab.classList.add(activeClass)
 
 			filterSlides(category)
 		})
 	})
 
-	// initial active tab
 	const activeTab = document.querySelector(`${tabsSelector}.${activeClass}`)
 
 	if (activeTab) {

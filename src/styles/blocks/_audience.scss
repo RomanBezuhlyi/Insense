@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .audience {
+	overflow-x: hidden;
 	padding-top: 96px;
 	background: var(--color-bg-accent);
 	padding-bottom: 128px;
