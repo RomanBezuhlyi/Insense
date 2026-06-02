@@ -17,7 +17,7 @@ export function initHeroWords({
 	}
 
 	function activateWord(index) {
-		words.forEach(w => {
+		words.forEach((w) => {
 			w.classList.remove('is-active', 'is-leave')
 		})
 
@@ -39,7 +39,6 @@ export function initHeroWords({
 
 			nextWord.classList.remove('is-leave')
 
-			// force reflow for animation restart
 			void nextWord.offsetWidth
 
 			nextWord.classList.add('is-active')
@@ -50,13 +49,11 @@ export function initHeroWords({
 		}, leaveDelay)
 	}
 
-	// init
 	window.addEventListener('load', () => {
 		activateWord(current)
 	})
 
 	const timer = setInterval(next, interval)
 
-	// optional cleanup
 	return () => clearInterval(timer)
 }

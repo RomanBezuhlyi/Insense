@@ -6,7 +6,7 @@ import 'swiper/css/navigation'
 
 export function initResultsSlider() {
 	let resultsSlider = null
-	let activeCategory = null // 🔥 STATE
+	let activeCategory = null
 
 	if (document.querySelector('.results__slider')) {
 		const progressFill = document.querySelector('.results__progress-fill')
@@ -31,7 +31,7 @@ export function initResultsSlider() {
 					requestAnimationFrame(() => updateUI(swiper))
 				},
 				slideChange(swiper) {
-					updateUI(swiper) // 🔥 тепер стабільно
+					updateUI(swiper)
 				},
 			},
 		})
@@ -72,7 +72,6 @@ export function initResultsSlider() {
 		window.updateResultsSlider = function (category) {
 			if (!resultsSlider) return
 
-			// 🔥 зберігаємо активний таб
 			if (category) activeCategory = category
 
 			requestAnimationFrame(() => {

@@ -1,7 +1,6 @@
 export function initReviewsVideoModal() {
 	const triggers = document.querySelectorAll('.reviews__card-video')
 
-	// створюємо модалку один раз
 	const modal = document.createElement('div')
 	modal.className = 'video-modal'
 	modal.innerHTML = `

@@ -11,12 +11,12 @@ export function initScrollAnimations() {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('is-visible')
-					observer.unobserve(entry.target) // тільки 1 раз
+					observer.unobserve(entry.target)
 				}
 			})
 		},
 		{
-			threshold: 0.15, // коли 15% елемента видно
+			threshold: 0.15,
 			rootMargin: '0px 0px -10% 0px',
 		}
 	)

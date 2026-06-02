@@ -37,7 +37,6 @@ export function initModals() {
 			return
 		}
 
-		// Клік по фону модалки
 		const modal = e.target.closest('[data-modal]')
 		if (modal && !e.target.closest('.modal__content, .popup__content')) {
 			closeModal(modal)

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initAccordion({
 		rootSelector: '.faq',
 		itemSelector: '.faq__item',
-		triggerSelector: '.faq__item-btn',
+		triggerSelector: '.faq__item-head',
 		contentSelector: '.faq__item-body',
 		activeClass: 'is-open',
 	})
